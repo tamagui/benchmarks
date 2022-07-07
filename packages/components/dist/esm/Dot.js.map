@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/Dot.tsx"],
+  "sourcesContent": ["import { styled } from '@tamagui/core'\n\nimport { View } from './View'\n\nexport const Dot = styled(View, {\n  position: 'absolute',\n  cursor: 'pointer',\n  width: '0',\n  height: '0',\n  borderColor: 'transparent',\n  borderStyle: 'solid',\n  borderTopWidth: 0,\n  transform: 'translate(50%, 50%)',\n})\n"],
+  "mappings": "AAAA;AAEA;AAEO,MAAM,MAAM,OAAO,MAAM;AAAA,EAC9B,UAAU;AAAA,EACV,QAAQ;AAAA,EACR,OAAO;AAAA,EACP,QAAQ;AAAA,EACR,aAAa;AAAA,EACb,aAAa;AAAA,EACb,gBAAgB;AAAA,EAChB,WAAW;AACb,CAAC;",
+  "names": []
+}

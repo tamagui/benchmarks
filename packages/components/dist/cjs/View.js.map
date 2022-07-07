@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/View.tsx"],
+  "sourcesContent": ["import { Stack, styled } from '@tamagui/core'\n\nexport const View = styled(Stack, {\n  alignItems: 'stretch',\n  display: 'flex',\n  flexBasis: 'auto',\n  flexDirection: 'column',\n  flexShrink: 0,\n  position: 'relative',\n  minHeight: '0',\n  minWidth: '0',\n})\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,kBAA8B;AAEvB,MAAM,OAAO,wBAAO,mBAAO;AAAA,EAChC,YAAY;AAAA,EACZ,SAAS;AAAA,EACT,WAAW;AAAA,EACX,eAAe;AAAA,EACf,YAAY;AAAA,EACZ,UAAU;AAAA,EACV,WAAW;AAAA,EACX,UAAU;AACZ,CAAC;",
+  "names": []
+}

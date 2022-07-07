@@ -1,0 +1,33 @@
+{
+  "name": "@tamagui/bench-components",
+  "version": "1.0.0-alpha.8",
+  "private": true,
+  "sideEffects": [
+    "*.css"
+  ],
+  "source": "src/index.ts",
+  "main": "dist/cjs/index",
+  "module": "dist/esm/index",
+  "typings": "types.d.ts",
+  "module:jsx": "_jsx",
+  "files": [
+    "_jsx",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tamagui-build",
+    "watch": "tamagui-build --watch"
+  },
+  "dependencies": {
+    "@tamagui/core": "^1.0.1-beta.95",
+    "@tamagui/helpers": "^1.0.1-beta.95"
+  },
+  "peerDependencies": {
+    "react-native-web": "*"
+  },
+  "devDependencies": {
+    "@tamagui/build": "^1.0.1-beta.95",
+    "@types/node": "^16.11.9",
+    "@types/react": "^17.0.35"
+  }
+}

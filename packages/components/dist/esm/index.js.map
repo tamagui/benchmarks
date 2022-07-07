@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/index.ts"],
+  "sourcesContent": ["export { Button } from './Button'\nexport * from '@tamagui/core'\nexport * from './Dot'\nexport * from './View'\nexport * from './Box'\n"],
+  "mappings": "AAAA;AACA;AACA;AACA;AACA;",
+  "names": []
+}

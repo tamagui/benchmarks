@@ -5,6 +5,7 @@ import { loadPinnedDesignSystem } from './designSystem'
 type AstNode = {
   kind: string
   property?: string
+  value?: string
   selector?: string
   name?: string
   nodes?: AstNode[]
@@ -15,6 +16,7 @@ type SignatureGroup = {
   properties: string[]
   scopes: string[]
   candidates: string[]
+  literalValues: Record<string, Record<string, string>>
 }
 
 const projectRoot = path.resolve(import.meta.dir, '..')
@@ -38,6 +40,7 @@ function selectorScope(selector: string) {
 function describe(nodes: AstNode[]) {
   const properties = new Set<string>()
   const scopes = new Set<string>(['self'])
+  const declarations: Record<string, string[]> = {}
 
   function visit(node: AstNode, insidePropertyRegistration = false) {
     const propertyRegistration =
@@ -45,6 +48,9 @@ function describe(nodes: AstNode[]) {
     if (node.kind === 'rule' && node.selector) scopes.add(selectorScope(node.selector))
     if (node.kind === 'declaration' && node.property && !propertyRegistration) {
       properties.add(normalizedProperty(node.property))
+      if (node.value) {
+        ;(declarations[node.property] ||= []).push(node.value)
+      }
     }
     for (const child of node.nodes || []) visit(child, propertyRegistration)
   }
@@ -53,6 +59,7 @@ function describe(nodes: AstNode[]) {
   return {
     properties: [...properties].sort(),
     scopes: [...scopes].sort(),
+    declarations
   }
 }
 
@@ -63,10 +70,26 @@ export async function createSignatureGroups(): Promise<SignatureGroup[]> {
   for (const [candidate] of designSystem.getClassList()) {
     const ast = designSystem.candidatesToAst([candidate])[0] as AstNode[] | undefined
     if (!ast) continue
-    const { properties, scopes } = describe(ast)
+    const { properties, scopes, declarations } = describe(ast)
+    const literalValues = Object.fromEntries(
+      Object.entries(declarations).flatMap(([property, values]) =>
+        values.length === 1 && /^[a-z-]+(?: [a-z-]+)*$/.test(values[0])
+          ? [[property, values[0]]]
+          : []
+      )
+    )
     const signature = `${scopes.join('+')}|${properties.join('+')}`
-    const group = groups.get(signature) || { signature, properties, scopes, candidates: [] }
+    const group = groups.get(signature) || {
+      signature,
+      properties,
+      scopes,
+      candidates: [],
+      literalValues: {}
+    }
     group.candidates.push(candidate)
+    if (Object.keys(literalValues).length > 0) {
+      group.literalValues[candidate] = literalValues
+    }
     groups.set(signature, group)
   }
 
@@ -77,7 +100,7 @@ export async function createSignatureGroups(): Promise<SignatureGroup[]> {
 
 async function main() {
   const groups = await createSignatureGroups()
-  const serialized = `${JSON.stringify({ schemaVersion: 1, groups }, null, 2)}\n`
+  const serialized = `${JSON.stringify({ schemaVersion: 2, groups }, null, 2)}\n`
   if (process.argv.includes('--check')) {
     if ((await Bun.file(outputPath).text()) !== serialized) {
       throw new Error('generated/signatures.json is stale; run `bun run signatures`')

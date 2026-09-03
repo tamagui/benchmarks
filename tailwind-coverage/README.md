@@ -47,6 +47,11 @@ Each capability is classified independently for web, iOS, and Android:
 - `inapplicable`: the platform has no equivalent. This remains visible in the report
   but is excluded from that platform's denominator.
 
+Applicability is checked at the value level, not only the property level. For example,
+React Native has `alignItems`, but cannot express Tailwind's `safe center` or `last
+baseline`; those classnames are therefore visible as inapplicable instead of being
+counted as failures. Ordinary `center` and `baseline` remain in the denominator.
+
 “Cross-platform” means rendered on every applicable platform, with limitations shown
 instead of silently treated as full support. Component-specific utilities such as SVG
 fill or TextInput placeholder color must be tested on the correct host component.

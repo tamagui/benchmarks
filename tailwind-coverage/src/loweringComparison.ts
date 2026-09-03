@@ -22,12 +22,52 @@ const propertyAliases: Record<string, string[]> = {
   inset: ['top', 'right', 'bottom', 'left'],
   rotate: ['transform'],
   scale: ['transform'],
-  translate: ['transform'],
+  translate: ['transform']
 }
 const frameworks = ['tamagui', 'nativewind', 'uniwind'] as const
 
+function normalizeCssEnum(property: string, value: string) {
+  if (
+    (property.startsWith('align-') || property.startsWith('justify-')) &&
+    (value === 'start' || value === 'end')
+  ) {
+    return `flex-${value}`
+  }
+  return value
+}
+
+function valueApplies(
+  hostProperties: string[],
+  literalValues: Record<string, string>,
+  contract: any,
+  platform: 'ios' | 'android'
+) {
+  for (const property of hostProperties) {
+    const authoredValue = literalValues[property]
+    if (!authoredValue) continue
+    const targets = propertyAliases[property] || [camel(property)]
+    const constrainedTargets = targets.filter(
+      (target) =>
+        target in contract.properties &&
+        contract.properties[target].platforms.includes(platform) &&
+        (contract.properties[target].values?.length || 0) > 0
+    )
+    if (constrainedTargets.length === 0) continue
+    const value = normalizeCssEnum(property, authoredValue)
+    if (!constrainedTargets.some((target) => contract.properties[target].values.includes(value))) {
+      return false
+    }
+  }
+  return true
+}
+
 function candidateApplies(candidate: string, platform: 'ios' | 'android') {
-  if (platform === 'ios' && /^(?!brightness-).*(?:blur|contrast|drop-shadow|grayscale|hue-rotate|invert|saturate|sepia)/.test(candidate)) {
+  if (
+    platform === 'ios' &&
+    /^(?!brightness-).*(?:blur|contrast|drop-shadow|grayscale|hue-rotate|invert|saturate|sepia)/.test(
+      candidate
+    )
+  ) {
     return false
   }
   // React Native 0.86 has no Z-axis translate/scale transform entries. The
@@ -44,35 +84,27 @@ function candidateApplies(candidate: string, platform: 'ios' | 'android') {
 }
 
 export async function createLoweringComparison() {
-  const signatures = await Bun.file(
-    path.join(projectRoot, 'generated/signatures.json')
-  ).json()
+  const signatures = await Bun.file(path.join(projectRoot, 'generated/signatures.json')).json()
   const contract = await Bun.file(
     path.join(projectRoot, 'generated/react-native-0.86.2.json')
   ).json()
   const [tamagui, nativewind, uniwind] = await Promise.all([
     readGzipJson('tamagui-lowering.json.gz'),
     readGzipJson('nativewind-lowering.json.gz'),
-    readGzipJson('uniwind-lowering.json.gz'),
+    readGzipJson('uniwind-lowering.json.gz')
   ])
   const platforms = Object.fromEntries(
     (['ios', 'android'] as const).map((platform) => {
       const observations = {
         tamagui: new Map(
-          tamagui.platforms[platform].map((entry: any) => [
-            entry.candidate,
-            entry.evidence,
-          ])
+          tamagui.platforms[platform].map((entry: any) => [entry.candidate, entry.evidence])
         ),
         nativewind: new Map(
           nativewind.observations.map((entry: any) => [entry.candidate, entry.evidence])
         ),
         uniwind: new Map(
-          uniwind.platforms[platform].map((entry: any) => [
-            entry.candidate,
-            entry.evidence,
-          ])
-        ),
+          uniwind.platforms[platform].map((entry: any) => [entry.candidate, entry.evidence])
+        )
       }
       const applicable = signatures.groups.flatMap((group: any) => {
         const hostProperties = group.properties.filter(
@@ -81,17 +113,19 @@ export async function createLoweringComparison() {
         const hostProperty =
           hostProperties.length > 0 &&
           hostProperties.every((property: string) => {
-          if (property.startsWith('--')) return false
-          const targets = propertyAliases[property] || [camel(property)]
-          return targets.some(
-            (target) =>
-              target in contract.properties &&
-              contract.properties[target].platforms.includes(platform)
-          )
+            if (property.startsWith('--')) return false
+            const targets = propertyAliases[property] || [camel(property)]
+            return targets.some(
+              (target) =>
+                target in contract.properties &&
+                contract.properties[target].platforms.includes(platform)
+            )
           })
         if (!hostProperty) return []
-        const candidates = group.candidates.filter((candidate: string) =>
-          candidateApplies(candidate, platform)
+        const candidates = group.candidates.filter(
+          (candidate: string) =>
+            candidateApplies(candidate, platform) &&
+            valueApplies(hostProperties, group.literalValues[candidate] || {}, contract, platform)
         )
         return candidates.length ? [{ ...group, candidates }] : []
       })
@@ -99,8 +133,7 @@ export async function createLoweringComparison() {
         const coverage = Object.fromEntries(
           frameworks.map((framework) => {
             const lowered = group.candidates.filter(
-              (candidate: string) =>
-                observations[framework].get(candidate) === 'lowered'
+              (candidate: string) => observations[framework].get(candidate) === 'lowered'
             ).length
             return [framework, lowered / group.candidates.length]
           })
@@ -109,8 +142,9 @@ export async function createLoweringComparison() {
       })
       const metrics = Object.fromEntries(
         frameworks.map((framework) => {
-          const metric = scoreCoverage(applicable, (candidate) =>
-            observations[framework].get(candidate) === 'lowered'
+          const metric = scoreCoverage(
+            applicable,
+            (candidate) => observations[framework].get(candidate) === 'lowered'
           )
           return [framework, metric]
         })
@@ -140,8 +174,7 @@ async function main() {
       .filter((row: any) => row.coverage.nativewind > row.coverage.tamagui)
       .sort(
         (a: any, b: any) =>
-          b.coverage.nativewind - b.coverage.tamagui -
-          (a.coverage.nativewind - a.coverage.tamagui)
+          b.coverage.nativewind - b.coverage.tamagui - (a.coverage.nativewind - a.coverage.tamagui)
       )
       .slice(0, 20)
     return [
@@ -151,9 +184,12 @@ async function main() {
       '| --- | ---: | ---: | ---: | ---: | --- |',
       ...gaps.map(
         (row: any) =>
-          `| \`${row.signature.replaceAll('|', '\\|')}\` | ${row.candidates.length} | ${pct(row.coverage.tamagui)} | ${pct(row.coverage.nativewind)} | ${pct(row.coverage.uniwind)} | ${row.candidates.slice(0, 3).map((candidate: string) => `\`${candidate}\``).join(', ')} |`
+          `| \`${row.signature.replaceAll('|', '\\|')}\` | ${row.candidates.length} | ${pct(row.coverage.tamagui)} | ${pct(row.coverage.nativewind)} | ${pct(row.coverage.uniwind)} | ${row.candidates
+            .slice(0, 3)
+            .map((candidate: string) => `\`${candidate}\``)
+            .join(', ')} |`
       ),
-      '',
+      ''
     ]
   }
   const lines = [
@@ -184,7 +220,7 @@ async function main() {
     ...gapLines('ios'),
     ...gapLines('android'),
     'The primary score will replace lowering credit with browser/iOS/Android rendered fixtures.',
-    '',
+    ''
   ]
   const serialized = lines.join('\n')
   if (process.argv.includes('--check')) {

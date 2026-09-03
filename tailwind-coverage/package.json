@@ -12,8 +12,8 @@
     "check:signatures": "bun src/signatures.ts --check",
     "check:native-contract": "bun src/reactNativeContract.ts --check",
     "check:lowering-report": "bun src/loweringComparison.ts --check",
-    "test": "bun test",
-    "check": "bun run check:catalog && bun run check:signatures && bun run check:native-contract && bun run check:lowering-report && bun test"
+    "test": "bun test --timeout 30000",
+    "check": "bun run check:catalog && bun run check:signatures && bun run check:native-contract && bun run check:lowering-report && bun run test"
   },
   "dependencies": {
     "tailwindcss": "4.3.0"

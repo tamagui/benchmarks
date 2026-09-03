@@ -20,12 +20,16 @@ describe('signature-weighted lowering comparison', () => {
       expect(result.platforms[platform].scores.uniwind).toBeGreaterThan(
         result.platforms[platform].scores.tamagui
       )
-      expect(result.platforms[platform].metrics.tamagui.candidateTotal).toBeGreaterThan(
-        1_000
-      )
+      expect(result.platforms[platform].metrics.tamagui.candidateTotal).toBeGreaterThan(1_000)
       expect(result.platforms[platform].metrics.tamagui.familyTotal).toBe(
         result.platforms[platform].applicableGroups
       )
+      const rows = result.platforms[platform].rows
+      const alignItems = rows.find((row) => row.signature === 'self|align-items')
+      const display = rows.find((row) => row.signature === 'self|display')
+      expect(alignItems.candidates).not.toContain('items-center-safe')
+      expect(alignItems.candidates).not.toContain('items-baseline-last')
+      expect(display.candidates).not.toContain('grid')
     }
   })
 })

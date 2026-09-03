@@ -7,11 +7,13 @@
     "catalog": "bun src/catalog.ts",
     "signatures": "bun src/signatures.ts",
     "native-contract": "bun src/reactNativeContract.ts",
+    "report:lowering": "bun src/loweringComparison.ts",
     "check:catalog": "bun src/catalog.ts --check",
     "check:signatures": "bun src/signatures.ts --check",
     "check:native-contract": "bun src/reactNativeContract.ts --check",
+    "check:lowering-report": "bun src/loweringComparison.ts --check",
     "test": "bun test",
-    "check": "bun run check:catalog && bun run check:signatures && bun run check:native-contract && bun test"
+    "check": "bun run check:catalog && bun run check:signatures && bun run check:native-contract && bun run check:lowering-report && bun test"
   },
   "dependencies": {
     "tailwindcss": "4.3.0"

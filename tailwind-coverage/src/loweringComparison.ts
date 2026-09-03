@@ -24,7 +24,24 @@ const propertyAliases: Record<string, string[]> = {
   scale: ['transform'],
   translate: ['transform']
 }
+const customVariableTargets: [prefix: string, targets: string[]][] = [
+  ['--tw-gradient-', ['experimental_backgroundImage']],
+  ['--tw-inset-ring-', ['boxShadow']],
+  ['--tw-inset-shadow-', ['boxShadow']],
+  ['--tw-ring-', ['boxShadow']],
+  ['--tw-shadow-', ['boxShadow']],
+  ['--tw-text-shadow-', ['textShadowColor', 'textShadowOffset', 'textShadowRadius']],
+  ['--tw-leading', ['lineHeight']],
+]
 const frameworks = ['tamagui', 'nativewind', 'uniwind'] as const
+
+function targetsForProperty(property: string) {
+  if (propertyAliases[property]) return propertyAliases[property]
+  for (const [prefix, targets] of customVariableTargets) {
+    if (property.startsWith(prefix)) return targets
+  }
+  return property.startsWith('--') ? [] : [camel(property)]
+}
 
 function normalizeCssEnum(property: string, value: string) {
   if (
@@ -45,7 +62,7 @@ function valueApplies(
   for (const property of hostProperties) {
     const authoredValue = literalValues[property]
     if (!authoredValue) continue
-    const targets = propertyAliases[property] || [camel(property)]
+    const targets = targetsForProperty(property)
     const constrainedTargets = targets.filter(
       (target) =>
         target in contract.properties &&
@@ -79,6 +96,15 @@ function candidateApplies(candidate: string, platform: 'ios' | 'android') {
   // Native TextStyle has one text-shadow slot. Tailwind's sm/md/lg presets are
   // stacks of three shadows, so accepting one member is not equivalent.
   if (/^text-shadow-(?:sm|md|lg)$/.test(candidate)) return false
+  // RN dimensions accept points, percentages, and auto. CSS viewport, line-height,
+  // intrinsic sizing, and `none` constraint values do not have equivalent Yoga values.
+  if (
+    /^(?:size|w|h|min-w|max-w|min-h|max-h|basis|inline|min-inline|max-inline|block|min-block|max-block)-(?:screen|dvh|dvw|lvh|lvw|svh|svw|lh|min|max|fit|none)$/.test(
+      candidate
+    )
+  ) {
+    return false
+  }
   // Tailwind's named tracking values are em-relative. RN letterSpacing is an
   // absolute point value, so a naked numeric lowering is not equivalent unless
   // the active font size is also known at runtime.
@@ -113,17 +139,16 @@ export async function createLoweringComparison() {
         const hostProperties = group.properties.filter(
           (property: string) => !property.startsWith('--')
         )
-        const hostProperty =
-          hostProperties.length > 0 &&
-          hostProperties.every((property: string) => {
-            if (property.startsWith('--')) return false
-            const targets = propertyAliases[property] || [camel(property)]
-            return targets.some(
-              (target) =>
-                target in contract.properties &&
-                contract.properties[target].platforms.includes(platform)
-            )
-          })
+        const propertiesToValidate =
+          hostProperties.length > 0 ? hostProperties : group.properties
+        const hostProperty = propertiesToValidate.every((property: string) => {
+          const targets = targetsForProperty(property)
+          return targets.some(
+            (target) =>
+              target in contract.properties &&
+              contract.properties[target].platforms.includes(platform)
+          )
+        })
         if (!hostProperty) return []
         const candidates = group.candidates.filter(
           (candidate: string) =>

@@ -1,0 +1,19 @@
+{
+  "name": "@tamagui/tailwind-coverage",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "catalog": "bun src/catalog.ts",
+    "check:catalog": "bun src/catalog.ts --check",
+    "test": "bun test",
+    "check": "bun run check:catalog && bun test"
+  },
+  "dependencies": {
+    "tailwindcss": "4.3.0"
+  },
+  "devDependencies": {
+    "@types/bun": "1.3.14",
+    "typescript": "6.0.3"
+  }
+}

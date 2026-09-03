@@ -1,0 +1,16 @@
+{
+  "name": "@coverage-adapter/uniwind",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@expo/metro-config": "54.0.10",
+    "metro": "0.83.3",
+    "metro-cache": "0.83.3",
+    "metro-transform-worker": "0.83.3",
+    "react": "19.2.3",
+    "react-native": "0.86.2",
+    "tailwindcss": "4.3.0",
+    "uniwind": "1.11.0"
+  }
+}

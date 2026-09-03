@@ -63,3 +63,16 @@ bun run check
 The generated catalog contains Tailwind CSS 4.3.0's 23,286 default-theme candidates
 and their raw utility roots. The next layer maps those roots to semantic capabilities
 and executes the isolated framework adapters.
+
+Run the NativeWind lowering adapter independently:
+
+```sh
+cd adapters/nativewind
+bun install --frozen-lockfile
+bun run observe
+```
+
+Its compressed raw report distinguishes rules containing a native declaration from
+rules that only retain CSS variables. This is important: NativeWind's compiler retains
+mask variables even though it rejects `mask-image`, so variable-only output is
+`accepted`, not `lowered`.

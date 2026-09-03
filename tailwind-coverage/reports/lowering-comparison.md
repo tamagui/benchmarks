@@ -6,11 +6,13 @@ This is a compiler/lowering diagnostic, not the primary rendered coverage score.
 Each React-Native-applicable CSS declaration/scope signature has equal weight; candidate spellings only determine coverage within its signature. The pinned contract currently yields 139 iOS signatures and 149 Android signatures.
 Parser acceptance, CSS variables without a native declaration, and invalid RN properties or enum values earn zero.
 
-| Framework | Candidate diagnostics | iOS | Android |
-| --- | --- | ---: | ---: |
-| Tamagui | iOS 9905, Android 9947; zero unsafe | 79.34% | 78.71% |
-| NativeWind 5 preview | 10440 direct lowerings, 12846 accepted-only | 90.03% | 90.28% |
-| Uniwind | iOS 8443, Android 8437; invalid output earns zero | 89.01% | 89.33% |
+| Framework | iOS classnames | iOS family macro | Android classnames | Android family macro |
+| --- | ---: | ---: | ---: | ---: |
+| Tamagui | 7103/8661 (82.01%) | 79.34% | 7145/8718 (81.96%) | 78.71% |
+| NativeWind 5 preview | 8004/8661 (92.41%) | 90.03% | 8056/8718 (92.41%) | 90.28% |
+| Uniwind | 7637/8661 (88.18%) | 89.01% | 7689/8718 (88.20%) | 89.33% |
+
+These are lowering diagnostics. The final “working classname” table uses the same two metrics but requires `rendered` evidence for the complete family semantics before any candidate in that family passes.
 
 ## Largest Tamagui iOS lowering gaps versus NativeWind
 

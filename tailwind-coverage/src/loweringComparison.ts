@@ -1,5 +1,7 @@
 import path from 'node:path'
 
+import { scoreCoverage } from './metrics'
+
 const projectRoot = path.resolve(import.meta.dir, '..')
 const reportPath = path.join(projectRoot, 'reports/lowering-comparison.md')
 
@@ -22,6 +24,7 @@ const propertyAliases: Record<string, string[]> = {
   scale: ['transform'],
   translate: ['transform'],
 }
+const frameworks = ['tamagui', 'nativewind', 'uniwind'] as const
 
 function candidateApplies(candidate: string, platform: 'ios' | 'android') {
   if (platform === 'ios' && /^(?!brightness-).*(?:blur|contrast|drop-shadow|grayscale|hue-rotate|invert|saturate|sepia)/.test(candidate)) {
@@ -52,7 +55,6 @@ export async function createLoweringComparison() {
     readGzipJson('nativewind-lowering.json.gz'),
     readGzipJson('uniwind-lowering.json.gz'),
   ])
-  const frameworks = ['tamagui', 'nativewind', 'uniwind'] as const
   const platforms = Object.fromEntries(
     (['ios', 'android'] as const).map((platform) => {
       const observations = {
@@ -105,20 +107,27 @@ export async function createLoweringComparison() {
         )
         return { ...group, coverage }
       })
-      const scores = Object.fromEntries(
-        frameworks.map((framework) => [
-          framework,
-          rows.reduce(
-            (total: number, row: any) => total + row.coverage[framework],
-            0
-          ) / rows.length,
-        ])
+      const metrics = Object.fromEntries(
+        frameworks.map((framework) => {
+          const metric = scoreCoverage(applicable, (candidate) =>
+            observations[framework].get(candidate) === 'lowered'
+          )
+          return [framework, metric]
+        })
       )
-      return [platform, { applicableGroups: rows.length, scores, rows }]
+      const scores = Object.fromEntries(
+        frameworks.map((framework) => [framework, metrics[framework].familyMacroRate])
+      )
+      return [platform, { applicableGroups: rows.length, scores, metrics, rows }]
     })
   ) as Record<
     'ios' | 'android',
-    { applicableGroups: number; scores: Record<string, number>; rows: any[] }
+    {
+      applicableGroups: number
+      scores: Record<string, number>
+      metrics: Record<string, ReturnType<typeof scoreCoverage>>
+      rows: any[]
+    }
   >
   return { platforms, tamagui, nativewind, uniwind }
 }
@@ -156,11 +165,21 @@ async function main() {
     `Each React-Native-applicable CSS declaration/scope signature has equal weight; candidate spellings only determine coverage within its signature. The pinned contract currently yields ${result.platforms.ios.applicableGroups} iOS signatures and ${result.platforms.android.applicableGroups} Android signatures.`,
     'Parser acceptance, CSS variables without a native declaration, and invalid RN properties or enum values earn zero.',
     '',
-    '| Framework | Candidate diagnostics | iOS | Android |',
-    '| --- | --- | ---: | ---: |',
-    `| Tamagui | iOS ${result.tamagui.counts.ios.lowered}, Android ${result.tamagui.counts.android.lowered}; zero unsafe | ${pct(result.platforms.ios.scores.tamagui)} | ${pct(result.platforms.android.scores.tamagui)} |`,
-    `| NativeWind 5 preview | ${result.nativewind.counts.lowered} direct lowerings, ${result.nativewind.counts.accepted} accepted-only | ${pct(result.platforms.ios.scores.nativewind)} | ${pct(result.platforms.android.scores.nativewind)} |`,
-    `| Uniwind | iOS ${result.uniwind.counts.ios.lowered}, Android ${result.uniwind.counts.android.lowered}; invalid output earns zero | ${pct(result.platforms.ios.scores.uniwind)} | ${pct(result.platforms.android.scores.uniwind)} |`,
+    '| Framework | iOS classnames | iOS family macro | Android classnames | Android family macro |',
+    '| --- | ---: | ---: | ---: | ---: |',
+    ...frameworks.map((framework) => {
+      const label =
+        framework === 'tamagui'
+          ? 'Tamagui'
+          : framework === 'nativewind'
+            ? 'NativeWind 5 preview'
+            : 'Uniwind'
+      const ios = result.platforms.ios.metrics[framework]
+      const android = result.platforms.android.metrics[framework]
+      return `| ${label} | ${ios.candidatePassed}/${ios.candidateTotal} (${pct(ios.candidateRate)}) | ${pct(ios.familyMacroRate)} | ${android.candidatePassed}/${android.candidateTotal} (${pct(android.candidateRate)}) | ${pct(android.familyMacroRate)} |`
+    }),
+    '',
+    'These are lowering diagnostics. The final “working classname” table uses the same two metrics but requires `rendered` evidence for the complete family semantics before any candidate in that family passes.',
     '',
     ...gapLines('ios'),
     ...gapLines('android'),

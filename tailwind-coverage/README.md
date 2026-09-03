@@ -25,6 +25,18 @@ Evidence progresses through these levels:
 Only `rendered` earns primary-score credit. `accepted` is retained as a diagnostic and
 never presented as coverage.
 
+Every evidence layer publishes two scores:
+
+1. **Working classnames** — passed applicable candidates divided by every applicable
+   Tailwind classname. This answers how much of Tailwind a developer can actually type.
+2. **Family macro** — compute the pass rate inside each semantic family, then average
+   those family rates equally. This exposes broad gaps that palette or spacing expansion
+   would otherwise bury.
+
+A family is “full” only when every applicable classname in it passes. For the primary
+rendered table, a candidate can pass only after its complete semantic family has a real
+runtime fixture on that platform; a valid partial declaration is not enough.
+
 ## Platform contract
 
 Each capability is classified independently for web, iOS, and Android:

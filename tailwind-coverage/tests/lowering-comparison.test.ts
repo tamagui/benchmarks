@@ -20,6 +20,12 @@ describe('signature-weighted lowering comparison', () => {
       expect(result.platforms[platform].scores.uniwind).toBeGreaterThan(
         result.platforms[platform].scores.tamagui
       )
+      expect(result.platforms[platform].metrics.tamagui.candidateTotal).toBeGreaterThan(
+        1_000
+      )
+      expect(result.platforms[platform].metrics.tamagui.familyTotal).toBe(
+        result.platforms[platform].applicableGroups
+      )
     }
   })
 })

@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
+  "scripts": {
+    "observe": "bun observe.ts"
+  },
   "dependencies": {
     "@expo/metro-config": "54.0.10",
     "metro": "0.83.3",

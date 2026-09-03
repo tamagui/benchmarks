@@ -1,0 +1,1393 @@
+{
+  "schemaVersion": 1,
+  "reactNativeVersion": "0.86.2",
+  "source": "Libraries/StyleSheet/StyleSheetTypes.d.ts",
+  "properties": {
+    "alignContent": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"flex-start\" | \"flex-end\" | \"center\" | \"stretch\" | \"space-between\" | \"space-around\" | \"space-evenly\" | undefined",
+      "values": [
+        "center",
+        "flex-end",
+        "flex-start",
+        "space-around",
+        "space-between",
+        "space-evenly",
+        "stretch"
+      ]
+    },
+    "alignItems": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "FlexAlignType | undefined",
+      "values": [
+        "baseline",
+        "center",
+        "flex-end",
+        "flex-start",
+        "stretch"
+      ]
+    },
+    "alignSelf": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"auto\" | FlexAlignType | undefined",
+      "values": [
+        "auto",
+        "baseline",
+        "center",
+        "flex-end",
+        "flex-start",
+        "stretch"
+      ]
+    },
+    "aspectRatio": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | number | undefined"
+    },
+    "backfaceVisibility": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"visible\" | \"hidden\" | undefined",
+      "values": [
+        "hidden",
+        "visible"
+      ]
+    },
+    "backgroundColor": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "borderBlockColor": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "borderBlockEndColor": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "borderBlockStartColor": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "borderBottomColor": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "borderBottomEndRadius": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | AnimatableNumericValue | undefined"
+    },
+    "borderBottomLeftRadius": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | AnimatableNumericValue | undefined"
+    },
+    "borderBottomRightRadius": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | AnimatableNumericValue | undefined"
+    },
+    "borderBottomStartRadius": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | AnimatableNumericValue | undefined"
+    },
+    "borderBottomWidth": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "borderColor": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "borderCurve": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"circular\" | \"continuous\" | undefined",
+      "values": [
+        "circular",
+        "continuous"
+      ]
+    },
+    "borderEndColor": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "borderEndEndRadius": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | AnimatableNumericValue | undefined"
+    },
+    "borderEndStartRadius": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | AnimatableNumericValue | undefined"
+    },
+    "borderEndWidth": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "borderLeftColor": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "borderLeftWidth": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "borderRadius": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | AnimatableNumericValue | undefined"
+    },
+    "borderRightColor": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "borderRightWidth": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "borderStartColor": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "borderStartEndRadius": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | AnimatableNumericValue | undefined"
+    },
+    "borderStartStartRadius": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | AnimatableNumericValue | undefined"
+    },
+    "borderStartWidth": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "borderStyle": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"solid\" | \"dotted\" | \"dashed\" | undefined",
+      "values": [
+        "dashed",
+        "dotted",
+        "solid"
+      ]
+    },
+    "borderTopColor": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "borderTopEndRadius": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | AnimatableNumericValue | undefined"
+    },
+    "borderTopLeftRadius": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | AnimatableNumericValue | undefined"
+    },
+    "borderTopRightRadius": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | AnimatableNumericValue | undefined"
+    },
+    "borderTopStartRadius": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | AnimatableNumericValue | undefined"
+    },
+    "borderTopWidth": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "borderWidth": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "bottom": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "boxShadow": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | readonly BoxShadowValue[] | undefined"
+    },
+    "boxSizing": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"border-box\" | \"content-box\" | undefined",
+      "values": [
+        "border-box",
+        "content-box"
+      ]
+    },
+    "color": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "columnGap": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | number | undefined"
+    },
+    "cursor": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "CursorValue | undefined",
+      "values": [
+        "auto",
+        "pointer"
+      ]
+    },
+    "direction": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"inherit\" | \"ltr\" | \"rtl\" | undefined",
+      "values": [
+        "inherit",
+        "ltr",
+        "rtl"
+      ]
+    },
+    "display": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"none\" | \"flex\" | \"contents\" | undefined",
+      "values": [
+        "contents",
+        "flex",
+        "none"
+      ]
+    },
+    "elevation": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "end": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "experimental_backgroundImage": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | readonly BackgroundImageValue[] | undefined"
+    },
+    "experimental_backgroundPosition": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | readonly BackgroundPositionValue[] | undefined"
+    },
+    "experimental_backgroundRepeat": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | readonly BackgroundRepeatValue[] | undefined"
+    },
+    "experimental_backgroundSize": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | readonly BackgroundSizeValue[] | undefined"
+    },
+    "filter": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | readonly FilterFunction[] | undefined"
+    },
+    "flex": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "flexBasis": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "flexDirection": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"row\" | \"column\" | \"row-reverse\" | \"column-reverse\" | undefined",
+      "values": [
+        "column",
+        "column-reverse",
+        "row",
+        "row-reverse"
+      ]
+    },
+    "flexGrow": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "flexShrink": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "flexWrap": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"wrap\" | \"nowrap\" | \"wrap-reverse\" | undefined",
+      "values": [
+        "nowrap",
+        "wrap",
+        "wrap-reverse"
+      ]
+    },
+    "fontFamily": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "string | undefined"
+    },
+    "fontSize": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "fontStyle": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "\"normal\" | \"italic\" | undefined",
+      "values": [
+        "italic",
+        "normal"
+      ]
+    },
+    "fontVariant": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "FontVariant[] | undefined"
+    },
+    "fontWeight": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "\"normal\" | \"bold\" | \"100\" | \"200\" | \"300\" | \"400\" | \"500\" | \"600\" | \"700\" | \"800\" | \"900\" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | \"ultralight\" | \"thin\" | \"light\" | \"medium\" | ... 6 more ... | undefined",
+      "values": [
+        "100",
+        100,
+        "200",
+        200,
+        "300",
+        300,
+        "400",
+        400,
+        "500",
+        500,
+        "600",
+        600,
+        "700",
+        700,
+        "800",
+        800,
+        "900",
+        900,
+        "black",
+        "bold",
+        "condensed",
+        "condensedBold",
+        "heavy",
+        "light",
+        "medium",
+        "normal",
+        "regular",
+        "semibold",
+        "thin",
+        "ultralight"
+      ]
+    },
+    "gap": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | number | undefined"
+    },
+    "height": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "includeFontPadding": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "boolean | undefined",
+      "values": [
+        false,
+        true
+      ]
+    },
+    "inset": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "insetBlock": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "insetBlockEnd": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "insetBlockStart": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "insetInline": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "insetInlineEnd": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "insetInlineStart": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "isolation": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"auto\" | \"isolate\" | undefined",
+      "values": [
+        "auto",
+        "isolate"
+      ]
+    },
+    "justifyContent": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"flex-start\" | \"flex-end\" | \"center\" | \"space-between\" | \"space-around\" | \"space-evenly\" | undefined",
+      "values": [
+        "center",
+        "flex-end",
+        "flex-start",
+        "space-around",
+        "space-between",
+        "space-evenly"
+      ]
+    },
+    "left": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "letterSpacing": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "lineHeight": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "margin": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "marginBlock": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "marginBlockEnd": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "marginBlockStart": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "marginBottom": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "marginEnd": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "marginHorizontal": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "marginInline": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "marginInlineEnd": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "marginInlineStart": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "marginLeft": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "marginRight": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "marginStart": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "marginTop": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "marginVertical": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "maxHeight": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "maxWidth": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "minHeight": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "minWidth": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "mixBlendMode": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "BlendMode | undefined",
+      "values": [
+        "color",
+        "color-burn",
+        "color-dodge",
+        "darken",
+        "difference",
+        "exclusion",
+        "hard-light",
+        "hue",
+        "lighten",
+        "luminosity",
+        "multiply",
+        "normal",
+        "overlay",
+        "plus-lighter",
+        "saturation",
+        "screen",
+        "soft-light"
+      ]
+    },
+    "objectFit": {
+      "hosts": [
+        "ImageStyle"
+      ],
+      "type": "\"none\" | \"contain\" | \"cover\" | \"fill\" | \"scale-down\" | undefined",
+      "values": [
+        "contain",
+        "cover",
+        "fill",
+        "none",
+        "scale-down"
+      ]
+    },
+    "opacity": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "AnimatableNumericValue | undefined"
+    },
+    "outlineColor": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "outlineOffset": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "AnimatableNumericValue | undefined"
+    },
+    "outlineStyle": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"solid\" | \"dotted\" | \"dashed\" | undefined",
+      "values": [
+        "dashed",
+        "dotted",
+        "solid"
+      ]
+    },
+    "outlineWidth": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "AnimatableNumericValue | undefined"
+    },
+    "overflow": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"visible\" | \"hidden\" | undefined",
+      "values": [
+        "hidden",
+        "visible"
+      ]
+    },
+    "overlayColor": {
+      "hosts": [
+        "ImageStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "padding": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "paddingBlock": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "paddingBlockEnd": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "paddingBlockStart": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "paddingBottom": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "paddingEnd": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "paddingHorizontal": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "paddingInline": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "paddingInlineEnd": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "paddingInlineStart": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "paddingLeft": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "paddingRight": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "paddingStart": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "paddingTop": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "paddingVertical": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "pointerEvents": {
+      "hosts": [
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
+      "values": [
+        "auto",
+        "box-none",
+        "box-only",
+        "none"
+      ]
+    },
+    "position": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "\"absolute\" | \"relative\" | \"static\" | undefined",
+      "values": [
+        "absolute",
+        "relative",
+        "static"
+      ]
+    },
+    "resizeMode": {
+      "hosts": [
+        "ImageStyle"
+      ],
+      "type": "ImageResizeMode | undefined",
+      "values": [
+        "center",
+        "contain",
+        "cover",
+        "none",
+        "repeat",
+        "stretch"
+      ]
+    },
+    "right": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "rotation": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "AnimatableNumericValue | undefined"
+    },
+    "rowGap": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | number | undefined"
+    },
+    "scaleX": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "AnimatableNumericValue | undefined"
+    },
+    "scaleY": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "AnimatableNumericValue | undefined"
+    },
+    "shadowColor": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "shadowOffset": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "Readonly<{ width: number; height: number; }> | undefined"
+    },
+    "shadowOpacity": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "AnimatableNumericValue | undefined"
+    },
+    "shadowRadius": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "start": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "textAlign": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "\"auto\" | \"center\" | \"left\" | \"right\" | \"justify\" | undefined",
+      "values": [
+        "auto",
+        "center",
+        "justify",
+        "left",
+        "right"
+      ]
+    },
+    "textAlignVertical": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "\"auto\" | \"center\" | \"top\" | \"bottom\" | undefined",
+      "values": [
+        "auto",
+        "bottom",
+        "center",
+        "top"
+      ]
+    },
+    "textDecorationColor": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "textDecorationLine": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "\"none\" | \"underline\" | \"line-through\" | \"underline line-through\" | undefined",
+      "values": [
+        "line-through",
+        "none",
+        "underline",
+        "underline line-through"
+      ]
+    },
+    "textDecorationStyle": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "\"solid\" | \"dotted\" | \"dashed\" | \"double\" | undefined",
+      "values": [
+        "dashed",
+        "dotted",
+        "double",
+        "solid"
+      ]
+    },
+    "textShadowColor": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "textShadowOffset": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "{ width: number; height: number; } | undefined"
+    },
+    "textShadowRadius": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "number | undefined"
+    },
+    "textTransform": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "\"none\" | \"capitalize\" | \"uppercase\" | \"lowercase\" | undefined",
+      "values": [
+        "capitalize",
+        "lowercase",
+        "none",
+        "uppercase"
+      ]
+    },
+    "tintColor": {
+      "hosts": [
+        "ImageStyle"
+      ],
+      "type": "ColorValue | undefined"
+    },
+    "top": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "transform": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | readonly (({ perspective: AnimatableNumericValue; } & { rotate?: undefined; rotateX?: undefined; rotateY?: undefined; rotateZ?: undefined; scale?: undefined; scaleX?: undefined; ... 5 more ...; matrix?: undefined; }) | ... 11 more ... | ({ ...; } & { ...; }))[] | undefined"
+    },
+    "transformMatrix": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "number[] | undefined"
+    },
+    "transformOrigin": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "string | (string | number)[] | undefined"
+    },
+    "translateX": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "AnimatableNumericValue | undefined"
+    },
+    "translateY": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "AnimatableNumericValue | undefined"
+    },
+    "userSelect": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "\"none\" | \"auto\" | \"text\" | \"contain\" | \"all\" | undefined",
+      "values": [
+        "all",
+        "auto",
+        "contain",
+        "none",
+        "text"
+      ]
+    },
+    "verticalAlign": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "\"auto\" | \"top\" | \"bottom\" | \"middle\" | undefined",
+      "values": [
+        "auto",
+        "bottom",
+        "middle",
+        "top"
+      ]
+    },
+    "width": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "DimensionValue | undefined"
+    },
+    "writingDirection": {
+      "hosts": [
+        "TextStyle"
+      ],
+      "type": "\"auto\" | \"ltr\" | \"rtl\" | undefined",
+      "values": [
+        "auto",
+        "ltr",
+        "rtl"
+      ]
+    },
+    "zIndex": {
+      "hosts": [
+        "ImageStyle",
+        "TextStyle",
+        "ViewStyle"
+      ],
+      "type": "number | undefined"
+    }
+  }
+}

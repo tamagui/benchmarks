@@ -1,4 +1,4 @@
-export type EvidenceLevel = 'rejected' | 'accepted' | 'lowered' | 'rendered'
+export type EvidenceLevel = 'rejected' | 'accepted' | 'invalid' | 'lowered' | 'rendered'
 
 export type Platform = 'web' | 'ios' | 'android'
 

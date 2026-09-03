@@ -18,8 +18,9 @@ Evidence progresses through these levels:
 
 1. `rejected` — the framework does not recognize the candidate.
 2. `accepted` — a parser/compiler accepts it, but no valid platform output is proven.
-3. `lowered` — the framework emits a valid style or host prop with an exact assertion.
-4. `rendered` — an automated browser or simulator fixture proves the behavior.
+3. `invalid` — output is emitted, but violates the pinned platform's property/value contract.
+4. `lowered` — the framework emits a valid style or host prop with an exact assertion.
+5. `rendered` — an automated browser or simulator fixture proves the behavior.
 
 Only `rendered` earns primary-score credit. `accepted` is retained as a diagnostic and
 never presented as coverage.
@@ -76,3 +77,7 @@ Its compressed raw report distinguishes rules containing a native declaration fr
 rules that only retain CSS variables. This is important: NativeWind's compiler retains
 mask variables even though it rejects `mask-image`, so variable-only output is
 `accepted`, not `lowered`.
+
+The Uniwind adapter additionally validates every emitted property and literal enum
+value against the style types shipped by the pinned React Native version. For example,
+serializing `maskImage` or `display: "grid"` is `invalid`, not native coverage.

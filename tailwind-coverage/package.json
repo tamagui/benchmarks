@@ -5,9 +5,11 @@
   "type": "module",
   "scripts": {
     "catalog": "bun src/catalog.ts",
+    "signatures": "bun src/signatures.ts",
     "check:catalog": "bun src/catalog.ts --check",
+    "check:signatures": "bun src/signatures.ts --check",
     "test": "bun test",
-    "check": "bun run check:catalog && bun test"
+    "check": "bun run check:catalog && bun run check:signatures && bun test"
   },
   "dependencies": {
     "tailwindcss": "4.3.0"

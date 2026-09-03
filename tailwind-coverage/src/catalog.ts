@@ -1,20 +1,15 @@
-import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 
-import { __unstable__loadDesignSystem } from 'tailwindcss'
 import tailwindPackage from 'tailwindcss/package.json'
 
+import { loadPinnedDesignSystem } from './designSystem'
 import type { CandidateCatalog } from './types'
 
 const projectRoot = path.resolve(import.meta.dir, '..')
-const themePath = path.join(projectRoot, 'node_modules/tailwindcss/theme.css')
 const outputPath = path.join(projectRoot, 'generated/candidates.json')
 
 export async function createCandidateCatalog(): Promise<CandidateCatalog> {
-  const theme = await readFile(themePath, 'utf8')
-  const designSystem = await __unstable__loadDesignSystem(
-    `${theme}\n@tailwind utilities;`
-  )
+  const designSystem = await loadPinnedDesignSystem()
   const families = new Map<string, string[]>()
 
   for (const [candidate] of designSystem.getClassList()) {

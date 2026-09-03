@@ -6,62 +6,62 @@ This is a compiler/lowering diagnostic, not the primary rendered coverage score.
 Each React-Native-applicable CSS declaration/scope signature has equal weight; candidate spellings only determine coverage within its signature. The pinned contract currently yields 139 iOS signatures and 149 Android signatures.
 Parser acceptance, CSS variables without a native declaration, and invalid RN properties or enum values earn zero.
 
-| Framework | iOS classnames | iOS family macro | Android classnames | Android family macro |
-| --- | ---: | ---: | ---: | ---: |
-| Tamagui | 7103/8661 (82.01%) | 79.34% | 7145/8718 (81.96%) | 78.71% |
-| NativeWind 5 preview | 8004/8661 (92.41%) | 90.03% | 8056/8718 (92.41%) | 90.28% |
-| Uniwind | 7637/8661 (88.18%) | 89.01% | 7689/8718 (88.20%) | 89.33% |
+| Framework            |     iOS classnames | iOS family macro | Android classnames | Android family macro |
+| -------------------- | -----------------: | ---------------: | -----------------: | -------------------: |
+| Tamagui              | 7643/8661 (88.25%) |           84.11% | 7685/8718 (88.15%) |               83.16% |
+| NativeWind 5 preview | 8004/8661 (92.41%) |           90.03% | 8056/8718 (92.41%) |               90.28% |
+| Uniwind              | 7637/8661 (88.18%) |           89.01% | 7689/8718 (88.20%) |               89.33% |
 
 These are lowering diagnostics. The final “working classname” table uses the same two metrics but requires `rendered` evidence for the complete family semantics before any candidate in that family passes.
 
 ## Largest Tamagui iOS lowering gaps versus NativeWind
 
-| Declaration/scope signature | Candidates | Tamagui | NativeWind | Uniwind | Examples |
-| --- | ---: | ---: | ---: | ---: | --- |
-| `self\|--tw-inset-ring-shadow+box-shadow` | 6 | 0.00% | 100.00% | 100.00% | `inset-ring`, `inset-ring-0`, `inset-ring-1` |
-| `self\|--tw-inset-shadow+box-shadow` | 4 | 0.00% | 100.00% | 100.00% | `inset-shadow-2xs`, `inset-shadow-none`, `inset-shadow-sm` |
-| `self\|--tw-outline-style+outline+outline-offset+outline-style` | 1 | 0.00% | 100.00% | 100.00% | `outline-hidden` |
-| `self\|max-width+width` | 1 | 0.00% | 100.00% | 100.00% | `container` |
-| `self\|object-fit` | 5 | 0.00% | 100.00% | 100.00% | `object-contain`, `object-cover`, `object-fill` |
-| `self\|scale` | 1 | 0.00% | 100.00% | 100.00% | `scale-none` |
-| `self\|text-shadow` | 6 | 0.00% | 100.00% | 0.00% | `text-shadow-2xs`, `text-shadow-lg`, `text-shadow-md` |
-| `self\|transform` | 1 | 0.00% | 100.00% | 100.00% | `transform-none` |
-| `self\|translate` | 1 | 0.00% | 100.00% | 100.00% | `translate-none` |
-| `pseudo-element+self\|color` | 291 | 0.00% | 99.66% | 0.00% | `placeholder-amber-100`, `placeholder-amber-200`, `placeholder-amber-300` |
-| `self\|--tw-leading+line-height` | 41 | 34.15% | 100.00% | 100.00% | `leading-0`, `leading-0.5`, `leading-1` |
-| `self\|flex` | 41 | 36.59% | 100.00% | 100.00% | `flex-1`, `flex-1/12`, `flex-1/2` |
-| `self\|z-index` | 13 | 46.15% | 92.31% | 100.00% | `-z-0`, `-z-10`, `-z-20` |
-| `self\|align-self` | 9 | 55.56% | 100.00% | 100.00% | `self-auto`, `self-baseline`, `self-baseline-last` |
-| `self\|--tw-translate-x+--tw-translate-y+translate` | 124 | 55.65% | 100.00% | 100.00% | `-translate-0`, `-translate-0.5`, `-translate-1` |
-| `self\|--tw-translate-x+translate` | 124 | 55.65% | 100.00% | 100.00% | `-translate-x-0`, `-translate-x-0.5`, `-translate-x-1` |
-| `self\|--tw-translate-y+translate` | 124 | 55.65% | 100.00% | 100.00% | `-translate-y-0`, `-translate-y-0.5`, `-translate-y-1` |
-| `self\|--tw-gradient-*+background-image` | 58 | 13.79% | 56.90% | 100.00% | `-bg-conic-0`, `-bg-conic-120`, `-bg-conic-150` |
-| `self\|align-items` | 8 | 62.50% | 100.00% | 100.00% | `items-baseline`, `items-baseline-last`, `items-center` |
-| `self\|align-content` | 11 | 54.55% | 81.82% | 81.82% | `content-around`, `content-baseline`, `content-between` |
+| Declaration/scope signature               | Candidates | Tamagui | NativeWind | Uniwind | Examples                                                                  |
+| ----------------------------------------- | ---------: | ------: | ---------: | ------: | ------------------------------------------------------------------------- |
+| `self\|--tw-inset-ring-shadow+box-shadow` |          6 |   0.00% |    100.00% | 100.00% | `inset-ring`, `inset-ring-0`, `inset-ring-1`                              |
+| `self\|--tw-inset-shadow+box-shadow`      |          4 |   0.00% |    100.00% | 100.00% | `inset-shadow-2xs`, `inset-shadow-none`, `inset-shadow-sm`                |
+| `self\|max-width+width`                   |          1 |   0.00% |    100.00% | 100.00% | `container`                                                               |
+| `self\|object-fit`                        |          5 |   0.00% |    100.00% | 100.00% | `object-contain`, `object-cover`, `object-fill`                           |
+| `self\|scale`                             |          1 |   0.00% |    100.00% | 100.00% | `scale-none`                                                              |
+| `self\|text-shadow`                       |          6 |   0.00% |    100.00% |   0.00% | `text-shadow-2xs`, `text-shadow-lg`, `text-shadow-md`                     |
+| `self\|transform`                         |          1 |   0.00% |    100.00% | 100.00% | `transform-none`                                                          |
+| `self\|translate`                         |          1 |   0.00% |    100.00% | 100.00% | `translate-none`                                                          |
+| `pseudo-element+self\|color`              |        291 |   0.00% |     99.66% |   0.00% | `placeholder-amber-100`, `placeholder-amber-200`, `placeholder-amber-300` |
+| `self\|align-self`                        |          9 |  55.56% |    100.00% | 100.00% | `self-auto`, `self-baseline`, `self-baseline-last`                        |
+| `self\|--tw-gradient-*+background-image`  |         58 |  13.79% |     56.90% | 100.00% | `-bg-conic-0`, `-bg-conic-120`, `-bg-conic-150`                           |
+| `self\|align-items`                       |          8 |  62.50% |    100.00% | 100.00% | `items-baseline`, `items-baseline-last`, `items-center`                   |
+| `self\|align-content`                     |         11 |  54.55% |     81.82% |  81.82% | `content-around`, `content-baseline`, `content-between`                   |
+| `self\|justify-content`                   |         11 |  54.55% |     81.82% |  72.73% | `justify-around`, `justify-baseline`, `justify-between`                   |
+| `self\|--tw-leading+line-height`          |         41 |  82.93% |    100.00% | 100.00% | `leading-0`, `leading-0.5`, `leading-1`                                   |
+| `self\|--tw-shadow-*+box-shadow`          |         10 |  90.00% |    100.00% | 100.00% | `shadow`, `shadow-2xl`, `shadow-2xs`                                      |
+| `self\|rotate`                            |         19 |  94.74% |    100.00% |   0.00% | `-rotate-0`, `-rotate-1`, `-rotate-12`                                    |
+| `self\|max-height`                        |         74 |  83.78% |     86.49% |  95.95% | `max-h-0`, `max-h-0.5`, `max-h-1`                                         |
+| `self\|margin`                            |         71 |  98.59% |    100.00% | 100.00% | `-m-0`, `-m-0.5`, `-m-1`                                                  |
+| `self\|margin-block`                      |         71 |  98.59% |    100.00% | 100.00% | `-my-0`, `-my-0.5`, `-my-1`                                               |
 
 ## Largest Tamagui Android lowering gaps versus NativeWind
 
-| Declaration/scope signature | Candidates | Tamagui | NativeWind | Uniwind | Examples |
-| --- | ---: | ---: | ---: | ---: | --- |
-| `self\|--tw-drop-shadow+--tw-drop-shadow-size+filter` | 6 | 0.00% | 100.00% | 100.00% | `drop-shadow-2xl`, `drop-shadow-lg`, `drop-shadow-md` |
-| `self\|--tw-drop-shadow+filter` | 1 | 0.00% | 100.00% | 100.00% | `drop-shadow-none` |
-| `self\|--tw-inset-ring-shadow+box-shadow` | 6 | 0.00% | 100.00% | 100.00% | `inset-ring`, `inset-ring-0`, `inset-ring-1` |
-| `self\|--tw-inset-shadow+box-shadow` | 4 | 0.00% | 100.00% | 100.00% | `inset-shadow-2xs`, `inset-shadow-none`, `inset-shadow-sm` |
-| `self\|--tw-outline-style+outline+outline-offset+outline-style` | 1 | 0.00% | 100.00% | 100.00% | `outline-hidden` |
-| `self\|max-width+width` | 1 | 0.00% | 100.00% | 100.00% | `container` |
-| `self\|object-fit` | 5 | 0.00% | 100.00% | 100.00% | `object-contain`, `object-cover`, `object-fill` |
-| `self\|scale` | 1 | 0.00% | 100.00% | 100.00% | `scale-none` |
-| `self\|text-shadow` | 6 | 0.00% | 100.00% | 0.00% | `text-shadow-2xs`, `text-shadow-lg`, `text-shadow-md` |
-| `self\|transform` | 1 | 0.00% | 100.00% | 100.00% | `transform-none` |
-| `self\|translate` | 1 | 0.00% | 100.00% | 100.00% | `translate-none` |
-| `pseudo-element+self\|color` | 291 | 0.00% | 99.66% | 0.00% | `placeholder-amber-100`, `placeholder-amber-200`, `placeholder-amber-300` |
-| `self\|--tw-leading+line-height` | 41 | 34.15% | 100.00% | 100.00% | `leading-0`, `leading-0.5`, `leading-1` |
-| `self\|flex` | 41 | 36.59% | 100.00% | 100.00% | `flex-1`, `flex-1/12`, `flex-1/2` |
-| `self\|z-index` | 13 | 46.15% | 92.31% | 100.00% | `-z-0`, `-z-10`, `-z-20` |
-| `self\|align-self` | 9 | 55.56% | 100.00% | 100.00% | `self-auto`, `self-baseline`, `self-baseline-last` |
-| `self\|--tw-translate-x+--tw-translate-y+translate` | 124 | 55.65% | 100.00% | 100.00% | `-translate-0`, `-translate-0.5`, `-translate-1` |
-| `self\|--tw-translate-x+translate` | 124 | 55.65% | 100.00% | 100.00% | `-translate-x-0`, `-translate-x-0.5`, `-translate-x-1` |
-| `self\|--tw-translate-y+translate` | 124 | 55.65% | 100.00% | 100.00% | `-translate-y-0`, `-translate-y-0.5`, `-translate-y-1` |
-| `self\|--tw-gradient-*+background-image` | 58 | 13.79% | 56.90% | 100.00% | `-bg-conic-0`, `-bg-conic-120`, `-bg-conic-150` |
+| Declaration/scope signature                           | Candidates | Tamagui | NativeWind | Uniwind | Examples                                                                  |
+| ----------------------------------------------------- | ---------: | ------: | ---------: | ------: | ------------------------------------------------------------------------- |
+| `self\|--tw-drop-shadow+--tw-drop-shadow-size+filter` |          6 |   0.00% |    100.00% | 100.00% | `drop-shadow-2xl`, `drop-shadow-lg`, `drop-shadow-md`                     |
+| `self\|--tw-drop-shadow+filter`                       |          1 |   0.00% |    100.00% | 100.00% | `drop-shadow-none`                                                        |
+| `self\|--tw-inset-ring-shadow+box-shadow`             |          6 |   0.00% |    100.00% | 100.00% | `inset-ring`, `inset-ring-0`, `inset-ring-1`                              |
+| `self\|--tw-inset-shadow+box-shadow`                  |          4 |   0.00% |    100.00% | 100.00% | `inset-shadow-2xs`, `inset-shadow-none`, `inset-shadow-sm`                |
+| `self\|max-width+width`                               |          1 |   0.00% |    100.00% | 100.00% | `container`                                                               |
+| `self\|object-fit`                                    |          5 |   0.00% |    100.00% | 100.00% | `object-contain`, `object-cover`, `object-fill`                           |
+| `self\|scale`                                         |          1 |   0.00% |    100.00% | 100.00% | `scale-none`                                                              |
+| `self\|text-shadow`                                   |          6 |   0.00% |    100.00% |   0.00% | `text-shadow-2xs`, `text-shadow-lg`, `text-shadow-md`                     |
+| `self\|transform`                                     |          1 |   0.00% |    100.00% | 100.00% | `transform-none`                                                          |
+| `self\|translate`                                     |          1 |   0.00% |    100.00% | 100.00% | `translate-none`                                                          |
+| `pseudo-element+self\|color`                          |        291 |   0.00% |     99.66% |   0.00% | `placeholder-amber-100`, `placeholder-amber-200`, `placeholder-amber-300` |
+| `self\|align-self`                                    |          9 |  55.56% |    100.00% | 100.00% | `self-auto`, `self-baseline`, `self-baseline-last`                        |
+| `self\|--tw-gradient-*+background-image`              |         58 |  13.79% |     56.90% | 100.00% | `-bg-conic-0`, `-bg-conic-120`, `-bg-conic-150`                           |
+| `self\|align-items`                                   |          8 |  62.50% |    100.00% | 100.00% | `items-baseline`, `items-baseline-last`, `items-center`                   |
+| `self\|vertical-align`                                |          8 |   0.00% |     37.50% |  37.50% | `align-baseline`, `align-bottom`, `align-middle`                          |
+| `self\|align-content`                                 |         11 |  54.55% |     81.82% |  81.82% | `content-around`, `content-baseline`, `content-between`                   |
+| `self\|justify-content`                               |         11 |  54.55% |     81.82% |  72.73% | `justify-around`, `justify-baseline`, `justify-between`                   |
+| `self\|--tw-leading+line-height`                      |         41 |  82.93% |    100.00% | 100.00% | `leading-0`, `leading-0.5`, `leading-1`                                   |
+| `self\|--tw-shadow-*+box-shadow`                      |         10 |  90.00% |    100.00% | 100.00% | `shadow`, `shadow-2xl`, `shadow-2xs`                                      |
+| `self\|rotate`                                        |         19 |  94.74% |    100.00% |   0.00% | `-rotate-0`, `-rotate-1`, `-rotate-12`                                    |
 
 The primary score will replace lowering credit with browser/iOS/Android rendered fixtures.

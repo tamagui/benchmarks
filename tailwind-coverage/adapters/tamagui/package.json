@@ -1,0 +1,9 @@
+{
+  "name": "@coverage-adapter/tamagui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "observe": "bun observe.ts"
+  }
+}

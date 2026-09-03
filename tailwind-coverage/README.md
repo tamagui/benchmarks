@@ -81,3 +81,12 @@ mask variables even though it rejects `mask-image`, so variable-only output is
 The Uniwind adapter additionally validates every emitted property and literal enum
 value against the style types shipped by the pinned React Native version. For example,
 serializing `maskImage` or `display: "grid"` is `invalid`, not native coverage.
+
+The Tamagui adapter runs the real frontend audit from an exact git revision. It refuses
+to run against a different checkout or to publish a report containing an unsafe native
+claim:
+
+```sh
+cd adapters/tamagui
+TAMAGUI_REPO=/absolute/path/to/tamagui bun run observe
+```

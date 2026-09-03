@@ -76,6 +76,9 @@ function candidateApplies(candidate: string, platform: 'ios' | 'android') {
   if (/^-?(?:scale|translate)-z-/.test(candidate)) return false
   if (/^(?:scale|translate)-3d$/.test(candidate)) return false
   if (/^transform(?:-cpu|-gpu)?$/.test(candidate)) return false
+  // Native TextStyle has one text-shadow slot. Tailwind's sm/md/lg presets are
+  // stacks of three shadows, so accepting one member is not equivalent.
+  if (/^text-shadow-(?:sm|md|lg)$/.test(candidate)) return false
   // Tailwind's named tracking values are em-relative. RN letterSpacing is an
   // absolute point value, so a naked numeric lowering is not equivalent unless
   // the active font size is also known at runtime.

@@ -8,9 +8,9 @@ Parser acceptance, CSS variables without a native declaration, and invalid RN pr
 
 | Framework | iOS classnames | iOS family macro | Android classnames | Android family macro |
 | --- | ---: | ---: | ---: | ---: |
-| Tamagui | 7637/8576 (89.05%) | 87.62% | 7679/8628 (89.00%) | 86.43% |
-| NativeWind 5 preview | 7992/8576 (93.19%) | 92.79% | 8044/8628 (93.23%) | 93.28% |
-| Uniwind | 7591/8576 (88.51%) | 91.83% | 7643/8628 (88.58%) | 92.38% |
+| Tamagui | 7642/8573 (89.14%) | 90.02% | 7684/8625 (89.09%) | 88.66% |
+| NativeWind 5 preview | 7989/8573 (93.19%) | 92.79% | 8041/8625 (93.23%) | 93.28% |
+| Uniwind | 7591/8573 (88.55%) | 91.83% | 7643/8625 (88.61%) | 92.38% |
 
 These are lowering diagnostics. The final “working classname” table uses the same two metrics but requires `rendered` evidence for the complete family semantics before any candidate in that family passes.
 
@@ -22,15 +22,10 @@ These are lowering diagnostics. The final “working classname” table uses the
 | `self\|--tw-inset-shadow+box-shadow` | 4 | 0.00% | 100.00% | 100.00% | `inset-shadow-2xs`, `inset-shadow-none`, `inset-shadow-sm` |
 | `self\|max-width+width` | 1 | 0.00% | 100.00% | 100.00% | `container` |
 | `self\|object-fit` | 5 | 0.00% | 100.00% | 100.00% | `object-contain`, `object-cover`, `object-fill` |
-| `self\|scale` | 1 | 0.00% | 100.00% | 100.00% | `scale-none` |
-| `self\|text-shadow` | 6 | 0.00% | 100.00% | 0.00% | `text-shadow-2xs`, `text-shadow-lg`, `text-shadow-md` |
-| `self\|transform` | 1 | 0.00% | 100.00% | 100.00% | `transform-none` |
-| `self\|translate` | 1 | 0.00% | 100.00% | 100.00% | `translate-none` |
+| `self\|text-shadow` | 3 | 0.00% | 100.00% | 0.00% | `text-shadow-2xs`, `text-shadow-none`, `text-shadow-xs` |
 | `pseudo-element+self\|color` | 291 | 0.00% | 99.66% | 0.00% | `placeholder-amber-100`, `placeholder-amber-200`, `placeholder-amber-300` |
 | `self\|--tw-gradient-*+background-image` | 58 | 13.79% | 56.90% | 100.00% | `-bg-conic-0`, `-bg-conic-120`, `-bg-conic-150` |
 | `self\|--tw-leading+line-height` | 41 | 82.93% | 100.00% | 100.00% | `leading-0`, `leading-0.5`, `leading-1` |
-| `self\|align-self` | 6 | 83.33% | 100.00% | 100.00% | `self-auto`, `self-baseline`, `self-center` |
-| `self\|align-content` | 7 | 85.71% | 100.00% | 100.00% | `content-around`, `content-between`, `content-center` |
 | `self\|--tw-shadow-*+box-shadow` | 10 | 90.00% | 100.00% | 100.00% | `shadow`, `shadow-2xl`, `shadow-2xs` |
 | `self\|rotate` | 19 | 94.74% | 100.00% | 0.00% | `-rotate-0`, `-rotate-1`, `-rotate-12` |
 | `self\|max-height` | 74 | 83.78% | 86.49% | 95.95% | `max-h-0`, `max-h-0.5`, `max-h-1` |
@@ -38,6 +33,11 @@ These are lowering diagnostics. The final “working classname” table uses the
 | `self\|margin-block` | 71 | 98.59% | 100.00% | 100.00% | `-my-0`, `-my-0.5`, `-my-1` |
 | `self\|margin-block-end` | 71 | 98.59% | 100.00% | 0.00% | `-mbe-0`, `-mbe-0.5`, `-mbe-1` |
 | `self\|margin-block-start` | 71 | 98.59% | 100.00% | 0.00% | `-mbs-0`, `-mbs-0.5`, `-mbs-1` |
+| `self\|margin-bottom` | 71 | 98.59% | 100.00% | 100.00% | `-mb-0`, `-mb-0.5`, `-mb-1` |
+| `self\|margin-inline` | 71 | 98.59% | 100.00% | 100.00% | `-mx-0`, `-mx-0.5`, `-mx-1` |
+| `self\|margin-inline-end` | 71 | 98.59% | 100.00% | 100.00% | `-me-0`, `-me-0.5`, `-me-1` |
+| `self\|margin-inline-start` | 71 | 98.59% | 100.00% | 100.00% | `-ms-0`, `-ms-0.5`, `-ms-1` |
+| `self\|margin-left` | 71 | 98.59% | 100.00% | 100.00% | `-ml-0`, `-ml-0.5`, `-ml-1` |
 
 ## Largest Tamagui Android lowering gaps versus NativeWind
 
@@ -49,19 +49,19 @@ These are lowering diagnostics. The final “working classname” table uses the
 | `self\|--tw-inset-shadow+box-shadow` | 4 | 0.00% | 100.00% | 100.00% | `inset-shadow-2xs`, `inset-shadow-none`, `inset-shadow-sm` |
 | `self\|max-width+width` | 1 | 0.00% | 100.00% | 100.00% | `container` |
 | `self\|object-fit` | 5 | 0.00% | 100.00% | 100.00% | `object-contain`, `object-cover`, `object-fill` |
-| `self\|scale` | 1 | 0.00% | 100.00% | 100.00% | `scale-none` |
-| `self\|text-shadow` | 6 | 0.00% | 100.00% | 0.00% | `text-shadow-2xs`, `text-shadow-lg`, `text-shadow-md` |
-| `self\|transform` | 1 | 0.00% | 100.00% | 100.00% | `transform-none` |
-| `self\|translate` | 1 | 0.00% | 100.00% | 100.00% | `translate-none` |
+| `self\|text-shadow` | 3 | 0.00% | 100.00% | 0.00% | `text-shadow-2xs`, `text-shadow-none`, `text-shadow-xs` |
 | `self\|vertical-align` | 3 | 0.00% | 100.00% | 100.00% | `align-bottom`, `align-middle`, `align-top` |
 | `pseudo-element+self\|color` | 291 | 0.00% | 99.66% | 0.00% | `placeholder-amber-100`, `placeholder-amber-200`, `placeholder-amber-300` |
 | `self\|--tw-gradient-*+background-image` | 58 | 13.79% | 56.90% | 100.00% | `-bg-conic-0`, `-bg-conic-120`, `-bg-conic-150` |
 | `self\|--tw-leading+line-height` | 41 | 82.93% | 100.00% | 100.00% | `leading-0`, `leading-0.5`, `leading-1` |
-| `self\|align-self` | 6 | 83.33% | 100.00% | 100.00% | `self-auto`, `self-baseline`, `self-center` |
-| `self\|align-content` | 7 | 85.71% | 100.00% | 100.00% | `content-around`, `content-between`, `content-center` |
 | `self\|--tw-shadow-*+box-shadow` | 10 | 90.00% | 100.00% | 100.00% | `shadow`, `shadow-2xl`, `shadow-2xs` |
 | `self\|rotate` | 19 | 94.74% | 100.00% | 0.00% | `-rotate-0`, `-rotate-1`, `-rotate-12` |
 | `self\|max-height` | 74 | 83.78% | 86.49% | 95.95% | `max-h-0`, `max-h-0.5`, `max-h-1` |
 | `self\|margin` | 71 | 98.59% | 100.00% | 100.00% | `-m-0`, `-m-0.5`, `-m-1` |
+| `self\|margin-block` | 71 | 98.59% | 100.00% | 100.00% | `-my-0`, `-my-0.5`, `-my-1` |
+| `self\|margin-block-end` | 71 | 98.59% | 100.00% | 0.00% | `-mbe-0`, `-mbe-0.5`, `-mbe-1` |
+| `self\|margin-block-start` | 71 | 98.59% | 100.00% | 0.00% | `-mbs-0`, `-mbs-0.5`, `-mbs-1` |
+| `self\|margin-bottom` | 71 | 98.59% | 100.00% | 100.00% | `-mb-0`, `-mb-0.5`, `-mb-1` |
+| `self\|margin-inline` | 71 | 98.59% | 100.00% | 100.00% | `-mx-0`, `-mx-0.5`, `-mx-1` |
 
 The primary score will replace lowering credit with browser/iOS/Android rendered fixtures.

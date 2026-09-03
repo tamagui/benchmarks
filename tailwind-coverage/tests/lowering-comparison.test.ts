@@ -27,9 +27,12 @@ describe('signature-weighted lowering comparison', () => {
       const rows = result.platforms[platform].rows
       const alignItems = rows.find((row) => row.signature === 'self|align-items')
       const display = rows.find((row) => row.signature === 'self|display')
+      const textShadow = rows.find((row) => row.signature === 'self|text-shadow')
       expect(alignItems.candidates).not.toContain('items-center-safe')
       expect(alignItems.candidates).not.toContain('items-baseline-last')
       expect(display.candidates).not.toContain('grid')
+      expect(textShadow.candidates).not.toContain('text-shadow-sm')
+      expect(textShadow.candidates).toContain('text-shadow-xs')
     }
   })
 })

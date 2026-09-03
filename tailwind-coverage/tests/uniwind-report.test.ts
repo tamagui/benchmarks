@@ -29,10 +29,15 @@ describe('pinned Uniwind lowering report', () => {
     expect(report.counts.ios).toEqual({
       rejected: 0,
       accepted: 932,
-      invalid: 13_908,
-      lowered: 8_446,
+      invalid: 13_911,
+      lowered: 8_443,
     })
-    expect(report.counts.android).toEqual(report.counts.ios)
+    expect(report.counts.android).toEqual({
+      rejected: 0,
+      accepted: 932,
+      invalid: 13_917,
+      lowered: 8_437,
+    })
     expect(ios.get('p-4')?.properties).toContain('padding')
     expect(ios.get('grid')?.evidence).toBe('invalid')
     expect(ios.get('mask-b-from-red-500')?.invalidProperties).toContain('maskImage')

@@ -8,6 +8,28 @@ const declarationPath = path.join(
 )
 const outputPath = path.join(projectRoot, 'generated/react-native-0.86.2.json')
 const styleTypes = ['ViewStyle', 'TextStyle', 'ImageStyle']
+type NativePlatform = 'ios' | 'android'
+
+function declaredPlatforms(property: ts.Symbol): NativePlatform[] {
+  const platforms = new Set<NativePlatform>()
+  for (const declaration of property.declarations || []) {
+    let node: ts.Node | undefined = declaration
+    while (node) {
+      if (ts.isInterfaceDeclaration(node)) {
+        if (node.name.text.endsWith('IOS')) platforms.add('ios')
+        if (node.name.text.endsWith('Android')) platforms.add('android')
+      }
+      node = node.parent
+    }
+    for (const tag of ts.getJSDocTags(declaration)) {
+      if (tag.tagName.text !== 'platform') continue
+      const comment = String(tag.comment || '').toLowerCase()
+      if (comment.includes('ios')) platforms.add('ios')
+      if (comment.includes('android')) platforms.add('android')
+    }
+  }
+  return platforms.size ? [...platforms].sort() : ['android', 'ios']
+}
 
 function literalValues(type: ts.Type): (string | number | boolean | null)[] | undefined {
   const members = type.isUnion() ? type.types : [type]
@@ -40,7 +62,12 @@ export function createReactNativeContract() {
   )
   const properties: Record<
     string,
-    { hosts: string[]; type: string; values?: (string | number | boolean | null)[] }
+    {
+      hosts: string[]
+      platforms: NativePlatform[]
+      type: string
+      values?: (string | number | boolean | null)[]
+    }
   > = {}
 
   for (const host of styleTypes) {
@@ -55,6 +82,9 @@ export function createReactNativeContract() {
       const values = literalValues(propertyType)
       properties[property.name] = {
         hosts: [...new Set([...(existing?.hosts || []), host])].sort(),
+        platforms: [
+          ...new Set([...(existing?.platforms || []), ...declaredPlatforms(property)]),
+        ].sort() as NativePlatform[],
         type: checker.typeToString(propertyType),
         ...(values ? { values } : {}),
       }

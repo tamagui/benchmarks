@@ -10,7 +10,11 @@ import {
 } from './node_modules/uniwind/src/bundler/css-processor/index.ts'
 import { Platform } from './node_modules/uniwind/src/common/consts.ts'
 
-type ContractProperty = { hosts: string[]; values?: unknown[] }
+type ContractProperty = {
+  hosts: string[]
+  platforms: ('ios' | 'android')[]
+  values?: unknown[]
+}
 type Contract = { properties: Record<string, ContractProperty> }
 type Template = Record<string, { entries: [string, string][] }[]>
 
@@ -31,10 +35,14 @@ function literalReturn(source: string): unknown {
   }
 }
 
-function validEntry([quotedProperty, source]: [string, string]) {
+function validEntry(
+  [quotedProperty, source]: [string, string],
+  platform: 'ios' | 'android'
+) {
   const property = JSON.parse(quotedProperty) as string
   const definition = contract.properties[property]
   if (!definition) return false
+  if (!definition.platforms.includes(platform)) return false
   if (!definition.values) return true
   const literal = literalReturn(source)
   return literal === undefined || definition.values.includes(literal)
@@ -47,6 +55,7 @@ const cssByCandidate = designSystem.candidatesToCss(candidates)
 const css = cssByCandidate.filter((value): value is string => value !== null).join('\n')
 
 function observe(platform: Platform.iOS | Platform.Android) {
+  const platformName = platform === Platform.iOS ? 'ios' : 'android'
   const config = new UniwindBundlerConfig({ cssEntryFile: 'unused.css' }, platform)
   const processor = new ProcessorBuilder(config)
   processor.transform(css)
@@ -55,7 +64,7 @@ function observe(platform: Platform.iOS | Platform.Android) {
   return candidates.map((candidate, index) => {
     const rules = stylesheet[candidate] || []
     const entries = rules.flatMap((rule) => rule.entries)
-    const validEntries = entries.filter(validEntry)
+    const validEntries = entries.filter((entry) => validEntry(entry, platformName))
     const evidence = !cssByCandidate[index]
       ? 'rejected'
       : validEntries.length
@@ -68,7 +77,7 @@ function observe(platform: Platform.iOS | Platform.Android) {
       evidence,
       properties: validEntries.map(([property]) => JSON.parse(property)),
       invalidProperties: entries
-        .filter((entry) => !validEntry(entry))
+        .filter((entry) => !validEntry(entry, platformName))
         .map(([property]) => JSON.parse(property)),
     }
   })

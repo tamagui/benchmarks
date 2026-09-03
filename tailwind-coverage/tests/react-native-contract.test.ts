@@ -10,5 +10,8 @@ describe('pinned React Native host contract', () => {
     expect(contract.properties.display.values).toEqual(['contents', 'flex', 'none'])
     expect(contract.properties.maskImage).toBeUndefined()
     expect(contract.properties.experimental_backgroundImage.hosts).toContain('ViewStyle')
+    expect(contract.properties.verticalAlign.platforms).toEqual(['android'])
+    expect(contract.properties.textDecorationStyle.platforms).toEqual(['android', 'ios'])
+    expect(contract.properties.boxSizing.platforms).toEqual(['android', 'ios'])
   })
 })

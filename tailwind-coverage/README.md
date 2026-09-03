@@ -62,8 +62,11 @@ bun run check
 ```
 
 The generated catalog contains Tailwind CSS 4.3.0's 23,286 default-theme candidates
-and their raw utility roots. The next layer maps those roots to semantic capabilities
-and executes the isolated framework adapters.
+and their raw utility roots. `report:lowering` collapses these into declaration/scope
+signatures, requires every semantic declaration to exist in the pinned React Native
+host contract, and scores iOS and Android separately. It also excludes setup-only
+classes, unsupported Z transforms, and em-relative tracking rather than rewarding a
+numeric output with different semantics.
 
 Run the NativeWind lowering adapter independently:
 
@@ -78,13 +81,14 @@ rules that only retain CSS variables. This is important: NativeWind's compiler r
 mask variables even though it rejects `mask-image`, so variable-only output is
 `accepted`, not `lowered`.
 
-The Uniwind adapter additionally validates every emitted property and literal enum
-value against the style types shipped by the pinned React Native version. For example,
-serializing `maskImage` or `display: "grid"` is `invalid`, not native coverage.
+The Uniwind adapter additionally validates every emitted property, platform, and
+literal enum value against the style types shipped by the pinned React Native version.
+For example, serializing `maskImage`, `display: "grid"`, or an Android-only property
+on iOS is `invalid`, not native coverage.
 
-The Tamagui adapter runs the real frontend audit from an exact git revision. It refuses
-to run against a different checkout or to publish a report containing an unsafe native
-claim:
+The Tamagui adapter runs the real frontend audit from an exact git revision once for
+iOS and once for Android. It refuses a different or dirty checkout and will not publish
+a report containing an unsafe native claim:
 
 ```sh
 cd adapters/tamagui

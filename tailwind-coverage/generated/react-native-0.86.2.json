@@ -9,6 +9,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "\"flex-start\" | \"flex-end\" | \"center\" | \"stretch\" | \"space-between\" | \"space-around\" | \"space-evenly\" | undefined",
       "values": [
         "center",
@@ -26,6 +30,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "FlexAlignType | undefined",
       "values": [
         "baseline",
@@ -40,6 +48,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"auto\" | FlexAlignType | undefined",
       "values": [
@@ -57,6 +69,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | number | undefined"
     },
     "backfaceVisibility": {
@@ -64,6 +80,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"visible\" | \"hidden\" | undefined",
       "values": [
@@ -77,12 +97,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "ColorValue | undefined"
     },
     "borderBlockColor": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "ColorValue | undefined"
     },
@@ -91,12 +119,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "ColorValue | undefined"
     },
     "borderBlockStartColor": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "ColorValue | undefined"
     },
@@ -105,12 +141,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "ColorValue | undefined"
     },
     "borderBottomEndRadius": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "string | AnimatableNumericValue | undefined"
     },
@@ -120,6 +164,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | AnimatableNumericValue | undefined"
     },
     "borderBottomRightRadius": {
@@ -128,12 +176,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | AnimatableNumericValue | undefined"
     },
     "borderBottomStartRadius": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "string | AnimatableNumericValue | undefined"
     },
@@ -143,6 +199,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "number | undefined"
     },
     "borderColor": {
@@ -151,12 +211,19 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "ColorValue | undefined"
     },
     "borderCurve": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "ios"
       ],
       "type": "\"circular\" | \"continuous\" | undefined",
       "values": [
@@ -169,6 +236,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "ColorValue | undefined"
     },
     "borderEndEndRadius": {
@@ -176,12 +247,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | AnimatableNumericValue | undefined"
     },
     "borderEndStartRadius": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "string | AnimatableNumericValue | undefined"
     },
@@ -191,12 +270,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "number | undefined"
     },
     "borderLeftColor": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "ColorValue | undefined"
     },
@@ -206,6 +293,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "number | undefined"
     },
     "borderRadius": {
@@ -214,12 +305,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | AnimatableNumericValue | undefined"
     },
     "borderRightColor": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "ColorValue | undefined"
     },
@@ -229,12 +328,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "number | undefined"
     },
     "borderStartColor": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "ColorValue | undefined"
     },
@@ -243,12 +350,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | AnimatableNumericValue | undefined"
     },
     "borderStartStartRadius": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "string | AnimatableNumericValue | undefined"
     },
@@ -258,12 +373,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "number | undefined"
     },
     "borderStyle": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"solid\" | \"dotted\" | \"dashed\" | undefined",
       "values": [
@@ -277,12 +400,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "ColorValue | undefined"
     },
     "borderTopEndRadius": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "string | AnimatableNumericValue | undefined"
     },
@@ -292,6 +423,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | AnimatableNumericValue | undefined"
     },
     "borderTopRightRadius": {
@@ -300,12 +435,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | AnimatableNumericValue | undefined"
     },
     "borderTopStartRadius": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "string | AnimatableNumericValue | undefined"
     },
@@ -315,6 +458,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "number | undefined"
     },
     "borderWidth": {
@@ -322,6 +469,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "number | undefined"
     },
@@ -331,12 +482,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "boxShadow": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "string | readonly BoxShadowValue[] | undefined"
     },
@@ -345,6 +504,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"border-box\" | \"content-box\" | undefined",
       "values": [
@@ -356,6 +519,10 @@
       "hosts": [
         "TextStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "ColorValue | undefined"
     },
     "columnGap": {
@@ -364,6 +531,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | number | undefined"
     },
     "cursor": {
@@ -371,6 +542,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "CursorValue | undefined",
       "values": [
@@ -383,6 +558,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"inherit\" | \"ltr\" | \"rtl\" | undefined",
       "values": [
@@ -397,6 +576,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "\"none\" | \"flex\" | \"contents\" | undefined",
       "values": [
         "contents",
@@ -409,6 +592,9 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android"
+      ],
       "type": "number | undefined"
     },
     "end": {
@@ -417,12 +603,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "experimental_backgroundImage": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "string | readonly BackgroundImageValue[] | undefined"
     },
@@ -431,12 +625,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | readonly BackgroundPositionValue[] | undefined"
     },
     "experimental_backgroundRepeat": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "string | readonly BackgroundRepeatValue[] | undefined"
     },
@@ -445,12 +647,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | readonly BackgroundSizeValue[] | undefined"
     },
     "filter": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "string | readonly FilterFunction[] | undefined"
     },
@@ -460,6 +670,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "number | undefined"
     },
     "flexBasis": {
@@ -468,6 +682,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "flexDirection": {
@@ -475,6 +693,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"row\" | \"column\" | \"row-reverse\" | \"column-reverse\" | undefined",
       "values": [
@@ -490,6 +712,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "number | undefined"
     },
     "flexShrink": {
@@ -498,6 +724,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "number | undefined"
     },
     "flexWrap": {
@@ -505,6 +735,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"wrap\" | \"nowrap\" | \"wrap-reverse\" | undefined",
       "values": [
@@ -517,17 +751,29 @@
       "hosts": [
         "TextStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | undefined"
     },
     "fontSize": {
       "hosts": [
         "TextStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "number | undefined"
     },
     "fontStyle": {
       "hosts": [
         "TextStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"normal\" | \"italic\" | undefined",
       "values": [
@@ -539,11 +785,18 @@
       "hosts": [
         "TextStyle"
       ],
+      "platforms": [
+        "ios"
+      ],
       "type": "FontVariant[] | undefined"
     },
     "fontWeight": {
       "hosts": [
         "TextStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"normal\" | \"bold\" | \"100\" | \"200\" | \"300\" | \"400\" | \"500\" | \"600\" | \"700\" | \"800\" | \"900\" | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 | \"ultralight\" | \"thin\" | \"light\" | \"medium\" | ... 6 more ... | undefined",
       "values": [
@@ -585,6 +838,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | number | undefined"
     },
     "height": {
@@ -593,11 +850,18 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "includeFontPadding": {
       "hosts": [
         "TextStyle"
+      ],
+      "platforms": [
+        "android"
       ],
       "type": "boolean | undefined",
       "values": [
@@ -611,6 +875,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "insetBlock": {
@@ -618,6 +886,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -627,6 +899,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "insetBlockStart": {
@@ -634,6 +910,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -643,6 +923,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "insetInlineEnd": {
@@ -650,6 +934,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -659,12 +947,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "isolation": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"auto\" | \"isolate\" | undefined",
       "values": [
@@ -677,6 +973,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"flex-start\" | \"flex-end\" | \"center\" | \"space-between\" | \"space-around\" | \"space-evenly\" | undefined",
       "values": [
@@ -694,17 +994,29 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "letterSpacing": {
       "hosts": [
         "TextStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "number | undefined"
     },
     "lineHeight": {
       "hosts": [
         "TextStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "number | undefined"
     },
@@ -714,6 +1026,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "marginBlock": {
@@ -721,6 +1037,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -730,6 +1050,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "marginBlockStart": {
@@ -737,6 +1061,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -746,6 +1074,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "marginEnd": {
@@ -753,6 +1085,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -762,6 +1098,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "marginInline": {
@@ -769,6 +1109,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -778,6 +1122,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "marginInlineStart": {
@@ -785,6 +1133,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -794,6 +1146,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "marginRight": {
@@ -801,6 +1157,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -810,6 +1170,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "marginTop": {
@@ -817,6 +1181,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -826,6 +1194,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "maxHeight": {
@@ -833,6 +1205,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -842,6 +1218,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "minHeight": {
@@ -849,6 +1229,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -858,12 +1242,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "mixBlendMode": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "BlendMode | undefined",
       "values": [
@@ -890,6 +1282,10 @@
       "hosts": [
         "ImageStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "\"none\" | \"contain\" | \"cover\" | \"fill\" | \"scale-down\" | undefined",
       "values": [
         "contain",
@@ -905,12 +1301,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "AnimatableNumericValue | undefined"
     },
     "outlineColor": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "ColorValue | undefined"
     },
@@ -919,12 +1323,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "AnimatableNumericValue | undefined"
     },
     "outlineStyle": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"solid\" | \"dotted\" | \"dashed\" | undefined",
       "values": [
@@ -938,6 +1350,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "AnimatableNumericValue | undefined"
     },
     "overflow": {
@@ -945,6 +1361,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"visible\" | \"hidden\" | undefined",
       "values": [
@@ -956,6 +1376,10 @@
       "hosts": [
         "ImageStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "ColorValue | undefined"
     },
     "padding": {
@@ -963,6 +1387,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -972,6 +1400,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "paddingBlockEnd": {
@@ -979,6 +1411,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -988,6 +1424,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "paddingBottom": {
@@ -995,6 +1435,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -1004,6 +1448,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "paddingHorizontal": {
@@ -1011,6 +1459,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -1020,6 +1472,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "paddingInlineEnd": {
@@ -1027,6 +1483,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -1036,6 +1496,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "paddingLeft": {
@@ -1043,6 +1507,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -1052,6 +1520,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "paddingStart": {
@@ -1059,6 +1531,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -1068,6 +1544,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "paddingVertical": {
@@ -1076,12 +1556,20 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "pointerEvents": {
       "hosts": [
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"box-none\" | \"none\" | \"box-only\" | \"auto\" | undefined",
       "values": [
@@ -1097,6 +1585,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "\"absolute\" | \"relative\" | \"static\" | undefined",
       "values": [
         "absolute",
@@ -1107,6 +1599,10 @@
     "resizeMode": {
       "hosts": [
         "ImageStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "ImageResizeMode | undefined",
       "values": [
@@ -1124,6 +1620,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "rotation": {
@@ -1131,6 +1631,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "AnimatableNumericValue | undefined"
     },
@@ -1140,6 +1644,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | number | undefined"
     },
     "scaleX": {
@@ -1147,6 +1655,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "AnimatableNumericValue | undefined"
     },
@@ -1156,6 +1668,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "AnimatableNumericValue | undefined"
     },
     "shadowColor": {
@@ -1163,6 +1679,9 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "ios"
       ],
       "type": "ColorValue | undefined"
     },
@@ -1172,6 +1691,9 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "ios"
+      ],
       "type": "Readonly<{ width: number; height: number; }> | undefined"
     },
     "shadowOpacity": {
@@ -1179,6 +1701,9 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "ios"
       ],
       "type": "AnimatableNumericValue | undefined"
     },
@@ -1188,6 +1713,9 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "ios"
+      ],
       "type": "number | undefined"
     },
     "start": {
@@ -1196,11 +1724,19 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "textAlign": {
       "hosts": [
         "TextStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"auto\" | \"center\" | \"left\" | \"right\" | \"justify\" | undefined",
       "values": [
@@ -1215,6 +1751,9 @@
       "hosts": [
         "TextStyle"
       ],
+      "platforms": [
+        "android"
+      ],
       "type": "\"auto\" | \"center\" | \"top\" | \"bottom\" | undefined",
       "values": [
         "auto",
@@ -1227,11 +1766,19 @@
       "hosts": [
         "TextStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "ColorValue | undefined"
     },
     "textDecorationLine": {
       "hosts": [
         "TextStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"none\" | \"underline\" | \"line-through\" | \"underline line-through\" | undefined",
       "values": [
@@ -1245,6 +1792,10 @@
       "hosts": [
         "TextStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "\"solid\" | \"dotted\" | \"dashed\" | \"double\" | undefined",
       "values": [
         "dashed",
@@ -1257,11 +1808,19 @@
       "hosts": [
         "TextStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "ColorValue | undefined"
     },
     "textShadowOffset": {
       "hosts": [
         "TextStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "{ width: number; height: number; } | undefined"
     },
@@ -1269,11 +1828,19 @@
       "hosts": [
         "TextStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "number | undefined"
     },
     "textTransform": {
       "hosts": [
         "TextStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"none\" | \"capitalize\" | \"uppercase\" | \"lowercase\" | undefined",
       "values": [
@@ -1287,6 +1854,10 @@
       "hosts": [
         "ImageStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "ColorValue | undefined"
     },
     "top": {
@@ -1294,6 +1865,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "DimensionValue | undefined"
     },
@@ -1303,6 +1878,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | readonly (({ perspective: AnimatableNumericValue; } & { rotate?: undefined; rotateX?: undefined; rotateY?: undefined; rotateZ?: undefined; scale?: undefined; scaleX?: undefined; ... 5 more ...; matrix?: undefined; }) | ... 11 more ... | ({ ...; } & { ...; }))[] | undefined"
     },
     "transformMatrix": {
@@ -1310,6 +1889,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "number[] | undefined"
     },
@@ -1319,6 +1902,10 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "string | (string | number)[] | undefined"
     },
     "translateX": {
@@ -1326,6 +1913,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "AnimatableNumericValue | undefined"
     },
@@ -1335,11 +1926,19 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "AnimatableNumericValue | undefined"
     },
     "userSelect": {
       "hosts": [
         "TextStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "\"none\" | \"auto\" | \"text\" | \"contain\" | \"all\" | undefined",
       "values": [
@@ -1353,6 +1952,9 @@
     "verticalAlign": {
       "hosts": [
         "TextStyle"
+      ],
+      "platforms": [
+        "android"
       ],
       "type": "\"auto\" | \"top\" | \"bottom\" | \"middle\" | undefined",
       "values": [
@@ -1368,11 +1970,18 @@
         "TextStyle",
         "ViewStyle"
       ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
       "type": "DimensionValue | undefined"
     },
     "writingDirection": {
       "hosts": [
         "TextStyle"
+      ],
+      "platforms": [
+        "ios"
       ],
       "type": "\"auto\" | \"ltr\" | \"rtl\" | undefined",
       "values": [
@@ -1386,6 +1995,10 @@
         "ImageStyle",
         "TextStyle",
         "ViewStyle"
+      ],
+      "platforms": [
+        "android",
+        "ios"
       ],
       "type": "number | undefined"
     }

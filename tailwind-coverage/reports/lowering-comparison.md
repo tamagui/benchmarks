@@ -8,7 +8,7 @@ Parser acceptance, CSS variables without a native declaration, and invalid RN pr
 
 | Framework | Candidate diagnostics | Signature-weighted lowering |
 | --- | --- | ---: |
-| Tamagui | 9598 safe lowerings, 0 invalid | 68.82% |
+| Tamagui | 9894 safe lowerings, 0 invalid | 71.16% |
 | NativeWind 5 preview | 10440 direct lowerings, 12846 accepted-only | 90.44% |
 | Uniwind | 8446 valid, 13908 invalid, 932 accepted-only | 89.57% |
 
@@ -32,9 +32,7 @@ Parser acceptance, CSS variables without a native declaration, and invalid RN pr
 | `self\|--tw-sepia+filter` | 4 | 0.00% | 100.00% | 100.00% | `sepia`, `sepia-0`, `sepia-100` |
 | `self\|--tw-tracking+letter-spacing` | 12 | 0.00% | 100.00% | 100.00% | `-tracking-normal`, `-tracking-tight`, `-tracking-tighter` |
 | `self\|--tw-translate-z+translate` | 70 | 0.00% | 100.00% | 100.00% | `-translate-z-0`, `-translate-z-0.5`, `-translate-z-1` |
-| `self\|background-image` | 1 | 0.00% | 100.00% | 100.00% | `bg-none` |
 | `self\|border-width+clip-path+height+margin+overflow+padding+position+white-space+width` | 1 | 0.00% | 100.00% | 100.00% | `sr-only` |
-| `self\|box-sizing` | 2 | 0.00% | 100.00% | 100.00% | `box-border`, `box-content` |
 | `self\|clip-path+height+margin+overflow+padding+position+white-space+width` | 1 | 0.00% | 100.00% | 100.00% | `not-sr-only` |
 | `self\|max-width+width` | 1 | 0.00% | 100.00% | 100.00% | `container` |
 | `self\|object-fit` | 5 | 0.00% | 100.00% | 100.00% | `object-contain`, `object-cover`, `object-fill` |
@@ -44,7 +42,9 @@ Parser acceptance, CSS variables without a native declaration, and invalid RN pr
 | `self\|transform` | 4 | 0.00% | 100.00% | 100.00% | `transform`, `transform-cpu`, `transform-gpu` |
 | `self\|translate` | 2 | 0.00% | 100.00% | 100.00% | `translate-3d`, `translate-none` |
 | `pseudo-element+self\|color` | 291 | 0.00% | 99.66% | 0.00% | `placeholder-amber-100`, `placeholder-amber-200`, `placeholder-amber-300` |
-| `self\|text-decoration-color` | 291 | 0.00% | 99.66% | 100.00% | `decoration-amber-100`, `decoration-amber-200`, `decoration-amber-300` |
-| `self\|text-decoration-style` | 5 | 0.00% | 80.00% | 80.00% | `decoration-dashed`, `decoration-dotted`, `decoration-double` |
+| `self\|--tw-leading+line-height` | 41 | 34.15% | 100.00% | 100.00% | `leading-0`, `leading-0.5`, `leading-1` |
+| `self\|flex` | 41 | 36.59% | 100.00% | 100.00% | `flex-1`, `flex-1/12`, `flex-1/2` |
+| `self\|z-index` | 13 | 46.15% | 92.31% | 100.00% | `-z-0`, `-z-10`, `-z-20` |
+| `self\|align-self` | 9 | 55.56% | 100.00% | 100.00% | `self-auto`, `self-baseline`, `self-baseline-last` |
 
 The primary score will replace lowering credit with browser/iOS/Android rendered fixtures.

@@ -18,14 +18,14 @@ describe('pinned Tamagui lowering report', () => {
       report.observations.map(({ candidate, evidence }) => [candidate, evidence])
     )
 
-    expect(report.gitRevision).toBe('dd3de66877f09e4f5482d507436e38e06d721003')
+    expect(report.gitRevision).toBe('3067ec646feaf7bb9281210098763405888d4a71')
     expect(report.tailwindVersion).toBe('4.3.0')
     expect(report.reactNativeVersion).toBe('0.86.2')
     expect(report.counts).toEqual({
-      rejected: 13_688,
+      rejected: 13_392,
       accepted: 0,
       invalid: 0,
-      lowered: 9_598,
+      lowered: 9_894,
     })
     expect(evidence.get('p-4')).toBe('lowered')
     expect(evidence.get('grid')).toBe('rejected')

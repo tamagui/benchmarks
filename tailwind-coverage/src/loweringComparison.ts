@@ -26,6 +26,7 @@ const propertyAliases: Record<string, string[]> = {
 }
 const customVariableTargets: [prefix: string, targets: string[]][] = [
   ['--tw-gradient-', ['experimental_backgroundImage']],
+  ['--tw-drop-shadow', ['filter']],
   ['--tw-inset-ring-', ['boxShadow']],
   ['--tw-inset-shadow-', ['boxShadow']],
   ['--tw-ring-', ['boxShadow']],
